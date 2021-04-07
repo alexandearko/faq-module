@@ -1,22 +1,15 @@
 import { createStore } from "vuex";
 import createPersistedState from "vuex-persistedstate";
+import products from "./modules/products"
+import modal from "./modules/modal"
 
 export default createStore({
-  state: {
-    products: []
-  },
-  mutations: {
-    addProduct(state, payload){
-      state.products.push(payload)
-      console.log(state.products)
-    }
-  },
+  state: {},
+  mutations: {},
   actions: {},
-  modules: {},
-  getters: {
-    getProducts(state) {
-      return state.products
-    }
+  modules: {
+    products,
+    modal
   },
   plugins: [createPersistedState({ storage: window.localStorage })]
 });

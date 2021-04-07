@@ -17,7 +17,11 @@
       <div class="element">{{ product.question }}</div>
       <div class="element">{{ product.answer }}</div>
       <div class="element">
-        <button data-bs-toggle="modal" data-bs-target="#showProductModal">
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#showProductModal"
+          @click="setCurrentProduct(product)"
+        >
           ver
         </button>
       </div>
@@ -32,8 +36,10 @@ export default {
       products: "getProducts"
     })
   },
-  created() {
-    console.log(this.products);
+  methods: {
+    setCurrentProduct(payload) {
+      this.$store.commit("setCurrentProduct", payload);
+    }
   }
 };
 </script>
@@ -46,10 +52,6 @@ export default {
 .head {
   background-color: #82b1ff;
   color: #fff;
-}
-.element:first-child {
-}
-.element:last-child {
 }
 .element {
   width: 150px;
