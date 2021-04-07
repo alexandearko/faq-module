@@ -55,7 +55,13 @@
         <textarea v-model="answer" cols="1" rows="5"> </textarea>
       </div>
       <div class="buttons">
-        <button class="primary-button" @click="addProduct" :disabled="disableButton">Añadir</button>
+        <button
+          class="primary-button"
+          @click="addProduct"
+          :disabled="disableButton"
+        >
+          Añadir
+        </button>
         <button class="secondary-button" @click="toHome">Cancelar</button>
       </div>
     </section>
@@ -86,13 +92,18 @@ export default {
     }
   },
   methods: {
+    getInfo() {
+      return {
+        product: this.product,
+        modulee: this.modulee,
+        category: this.category,
+        environment: this.environment,
+        question: this.question,
+        answer: this.answer
+      };
+    },
     addProduct() {
-      console.log(this.product);
-      console.log(this.modulee);
-      console.log(this.category);
-      console.log(this.environment);
-      console.log(this.question);
-      console.log(this.answer);
+      this.$store.commit("addProduct", this.getInfo());
     },
     toHome() {
       this.$router.push("/");
