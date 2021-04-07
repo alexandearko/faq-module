@@ -3,7 +3,7 @@
     <header><p>Lista de Preguntas</p></header>
     <section class="add-filter">
       <div>
-        <input type="text" /> <button class="primary-button">Filtrar</button>
+        <input type="text" v-model="text" /> <button class="primary-button" @click="filter">Filtrar</button>
       </div>
       <button class="primary-button ms-3">Exportar</button>
     </section>
@@ -15,6 +15,19 @@ import TableList from "./TableList.vue";
 export default {
   components: {
     TableList
+  },
+  data() {
+    return {
+      text: ""
+    }
+  },
+  methods: {
+    filter() {
+      this.$store.commit("filterByText", this.text)
+    }
+  },
+  created(){
+    this.filter()
   }
 };
 </script>

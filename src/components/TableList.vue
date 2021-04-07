@@ -47,7 +47,7 @@ import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapGetters({
-      products: "getProducts"
+      products: "getProductsFiltered"
     })
   },
   methods: {
@@ -57,6 +57,9 @@ export default {
     setProductToDelete(payload) {
       this.$store.commit("setProductToDelete", payload);
     }
+  },
+  created(){
+    console.log(this.products)
   }
 };
 </script>

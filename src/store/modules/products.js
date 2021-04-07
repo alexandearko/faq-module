@@ -17,13 +17,15 @@ const products = {
       state.products.splice(pos, 1);
     },
     filterByText(state, payload) {
+      console.log(payload)
       if (payload == "") {
-        return;
+        state.productsFiltered = state.products
+        console.log(state.productsFiltered)
       } else {
+        state.productsFiltered = state.products;
         payload = payload.toLowerCase();
-
         state.productsFiltered = state.productsFiltered.filter((product) => {
-          return product.name.toLowerCase().indexOf(payload) > -1;
+          return product.question.toLowerCase().indexOf(payload) > -1;
         });
       }
     },
