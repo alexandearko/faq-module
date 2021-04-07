@@ -1,8 +1,16 @@
 <template>
   <header>Centro de ayuda Seif</header>
   <router-view />
+  <show-product-modal />
 </template>
-
+<script>
+import ShowProductModal from "@/modals/ShowProductModal.vue";
+export default {
+  components: {
+    ShowProductModal
+  }
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
