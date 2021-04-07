@@ -22,14 +22,21 @@
           data-bs-target="#showProductModal"
           @click="setCurrentProduct(product)"
         >
-          ver
+          <img src="@/assets/eye.svg" alt="show-icon">
+        </button>
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#editProductModal"
+          @click="setCurrentProduct(product)"
+        >
+          <img src="@/assets/pencil.svg" alt="edit-icon">
         </button>
         <button
           data-bs-toggle="modal"
           data-bs-target="#confirmDeleteModal"
           @click="setProductToDelete(product)"
         >
-          Eliminar
+          <img src="@/assets/x.svg" alt="delete-icon">
         </button>
       </div>
     </div>
@@ -69,5 +76,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+button{
+  background-color: transparent;
+  border: none;
 }
 </style>

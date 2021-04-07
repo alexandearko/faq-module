@@ -3,6 +3,7 @@
   <router-view />
   <show-product-modal />
   <confirm-delete-modal />
+  <edit-product-modal />
   <div id="pop-up"></div>
   <teleport to="#pop-up">
       <transition name="fade">
@@ -13,11 +14,13 @@
 <script>
 import ShowProductModal from "@/modals/ShowProductModal.vue";
 import ConfirmDeleteModal from "@/modals/ConfirmDeleteModal.vue";
+import EditProductModal from "@/modals/EditProductModal.vue"
 import PopUp from "@/modals/PopUp.vue"
 export default {
   components: {
     ShowProductModal,
     ConfirmDeleteModal,
+    EditProductModal,
     PopUp
   },
   computed: {
