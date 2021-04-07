@@ -38,6 +38,23 @@
 .primary-button:active {
   background-color: #1197af;
 }
+.primary-button:disabled {
+  background-color: rgb(175, 175, 175);
+}
+.secondary-button {
+  height: 45px;
+  padding: 0 20px;
+  background-color: transparent;
+  border-radius: 5px;
+  color: #15adc7;
+  border: 2px solid #15adc7;
+}
+.secondary-button:hover {
+  background-color: #e2f1f5;
+}
+.secondary-button:active {
+  background-color: #b8bdbe;
+}
 header {
   width: 100%;
   height: 60px;
