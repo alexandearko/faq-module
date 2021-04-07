@@ -68,6 +68,7 @@
   </div>
 </template>
 <script>
+import { v4 as uuidv4 } from 'uuid';
 export default {
   data() {
     return {
@@ -99,7 +100,8 @@ export default {
         category: this.category,
         environment: this.environment,
         question: this.question,
-        answer: this.answer
+        answer: this.answer,
+        id: uuidv4()
       };
     },
     addProduct() {

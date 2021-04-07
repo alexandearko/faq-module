@@ -10,7 +10,7 @@
       <div class="element">Acciones</div>
     </div>
     <div v-for="(product, index) in products" :key="index" class="row-t">
-      <div class="element">1</div>
+      <div class="element">{{ product.id.slice(0, -28) }}</div>
       <div class="element">03/03/2021 04:14 pm</div>
       <div class="element">{{ product.modulee }}</div>
       <div class="element">{{ product.category }}</div>
@@ -23,6 +23,13 @@
           @click="setCurrentProduct(product)"
         >
           ver
+        </button>
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#confirmDeleteModal"
+          @click="setProductToDelete(product)"
+        >
+          Eliminar
         </button>
       </div>
     </div>
@@ -39,6 +46,9 @@ export default {
   methods: {
     setCurrentProduct(payload) {
       this.$store.commit("setCurrentProduct", payload);
+    },
+    setProductToDelete(payload) {
+      this.$store.commit("setProductToDelete", payload);
     }
   }
 };

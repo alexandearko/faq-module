@@ -5,7 +5,15 @@ const products = {
   mutations: {
     addProduct(state, payload){
       state.products.push(payload)
-      console.log(state.products)
+    },
+    deleteProduct(state, payload) {
+      let pos;
+      for (let index = 0; index < state.products.length; index++) {
+        if (state.products[index].id == payload) {
+          pos = index;
+        }
+      }
+      state.products.splice(pos, 1);
     }
   },
   actions: {},

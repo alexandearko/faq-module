@@ -2,12 +2,15 @@
   <header>Centro de ayuda Seif</header>
   <router-view />
   <show-product-modal />
+  <confirm-delete-modal />
 </template>
 <script>
 import ShowProductModal from "@/modals/ShowProductModal.vue";
+import ConfirmDeleteModal from "@/modals/ConfirmDeleteModal.vue";
 export default {
   components: {
-    ShowProductModal
+    ShowProductModal,
+    ConfirmDeleteModal
   }
 };
 </script>
