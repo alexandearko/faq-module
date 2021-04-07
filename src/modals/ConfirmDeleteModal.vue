@@ -20,7 +20,7 @@
           ></button>
         </div>
         <div class="modal-body">
-          <h3>Seguro que desea eliminar</h3>
+          <h3>Seguro que desea inhabilitar esta pregunta</h3>
           <h5>{{ product.question }}</h5>
           <p>{{ product.answer }}</p>
         </div>
@@ -55,7 +55,8 @@ export default {
   },
   methods: {
     deleteProduct() {
-      this.$store.commit("deleteProduct", this.product.id);
+      this.$store.commit("deleteProduct", this.product.id)
+      this.$store.commit("setPopUpMessage", "Pregunta inhabilitada");
     }
   }
 };

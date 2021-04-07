@@ -68,7 +68,7 @@
   </div>
 </template>
 <script>
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 export default {
   data() {
     return {
@@ -106,9 +106,19 @@ export default {
     },
     addProduct() {
       this.$store.commit("addProduct", this.getInfo());
+      this.$store.commit("setPopUpMessage", "Nueva pregunta creada");
+      this.reset();
     },
     toHome() {
       this.$router.push("/");
+    },
+    reset() {
+      (this.product = ""),
+        (this.modulee = ""),
+        (this.category = ""),
+        (this.environment = ""),
+        (this.question = ""),
+        (this.answer = "");
     }
   }
 };

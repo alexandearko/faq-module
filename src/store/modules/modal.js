@@ -1,7 +1,8 @@
 const modal = {
   state: {
     currentProduct: "",
-    productToDelete: ""
+    productToDelete: "",
+    popUpMessage: ""
   },
   mutations: {
     setCurrentProduct(state, payload){
@@ -9,6 +10,9 @@ const modal = {
     },
     setProductToDelete(state, payload) {
       state.productToDelete = payload
+    },
+    setPopUpMessage(state, payload) {
+      state.popUpMessage = payload
     }
   },
   actions: {},
@@ -18,7 +22,10 @@ const modal = {
     },
     getProductToDelete(state){
       return state.productToDelete
-    }
+    },
+    getPopUpMessage(state) {
+      return state.popUpMessage;
+    },
   }
 };
 

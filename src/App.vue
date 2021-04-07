@@ -3,14 +3,27 @@
   <router-view />
   <show-product-modal />
   <confirm-delete-modal />
+  <div id="pop-up"></div>
+  <teleport to="#pop-up">
+      <transition name="fade">
+        <pop-up v-if="showPopUp" />
+      </transition>
+    </teleport>
 </template>
 <script>
 import ShowProductModal from "@/modals/ShowProductModal.vue";
 import ConfirmDeleteModal from "@/modals/ConfirmDeleteModal.vue";
+import PopUp from "@/modals/PopUp.vue"
 export default {
   components: {
     ShowProductModal,
-    ConfirmDeleteModal
+    ConfirmDeleteModal,
+    PopUp
+  },
+  computed: {
+    showPopUp() {
+      return this.$store.getters.getPopUpMessage.length > 0
+    }
   }
 };
 </script>
@@ -81,5 +94,14 @@ header {
 }
 .breadcrumb-button:hover {
   text-decoration: underline;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
