@@ -1,7 +1,12 @@
 <template>
   <div class="products-list">
-    <header></header>
-    <section class="add-filter"></section>
+    <header><p>Lista de Preguntas</p></header>
+    <section class="add-filter">
+      <div>
+        <input type="text" /> <button class="primary-button">Filtrar</button>
+      </div>
+      <button class="primary-button ms-3">Exportar</button>
+    </section>
     <section class="table-section"><table-list /></section>
   </div>
 </template>
@@ -27,11 +32,28 @@ header {
   height: 40px;
   width: 100%;
   background-color: #15adc7;
+  color: #fff;
+  font-weight: 700;
 }
 .add-filter {
   height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 .table-section {
   padding: 0 20px;
+}
+input {
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid gray;
+  padding: 0 10px;
+  width: 200px;
+  margin-right: 5px;
+}
+.primary-button {
+  height: 35px;
 }
 </style>

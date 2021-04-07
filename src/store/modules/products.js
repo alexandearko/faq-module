@@ -1,6 +1,7 @@
 const products = {
   state: {
-    products: []
+    products: [],
+    productsFiltered: []
   },
   mutations: {
     addProduct(state, payload){
@@ -14,13 +15,27 @@ const products = {
         }
       }
       state.products.splice(pos, 1);
-    }
+    },
+    filterByText(state, payload) {
+      if (payload == "") {
+        return;
+      } else {
+        payload = payload.toLowerCase();
+
+        state.productsFiltered = state.productsFiltered.filter((product) => {
+          return product.name.toLowerCase().indexOf(payload) > -1;
+        });
+      }
+    },
   },
   actions: {},
   getters: {
     getProducts(state) {
       return state.products
-    }
+    },
+    getProductsFiltered(state) {
+      return state.productsFiltered;
+    },
   },
 };
 

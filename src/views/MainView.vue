@@ -42,6 +42,6 @@ export default {
   align-items: center;
 }
 .body {
-  padding: 0 20px;
+  padding: 0 100px;
 }
 </style>
